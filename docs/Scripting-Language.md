@@ -47,7 +47,7 @@
     LARGE_ARRAYS | enables arrays of up to 1000 entries instead of max 127  
     SCRIPT_LARGE_VNBUFF | enables to use 4096 in stead of 256 bytes buffer for variable names  
     USE_GOOGLE_CHARTS | enables definition of google charts within web section
-    USE_FEXTRACT | enables array extraction from database fxt(...), fxto() and tso(), tsn(), cts(), s2t() functions  
+    USE_FEXTRACT | enables array extraction from database fxt(...), fxto() and tso(), tsn(), cts(), s2t() functions  (Depency "USE_UFILESYS")
     USE_SCRIPT_SPI | enables support for SPI interface  
     USE_DSIPLAY_DUMP | enables to show epaper screen as BMP image in >w section  
     TS_FLOAT | may be define as double to use double precision numbers (uses double RAM memory and is slower)  
@@ -950,7 +950,7 @@ The script itself is also stored on the file system with a default size of 8192 
 `frw(fr url)` read file from web url  
 
 **Other commands**   (+?? flash)  
-`#define USE_FEXTRACT`  
+`#define USE_FEXTRACT`  (Depency #define USE_UFILESYS)
 `fxt(fr ts_from ts_to col_offs accum array1 array2 ... arrayn)` read arrays from csv file from timestamp to timestamp with column offset and accumulate values into arrays1 .. N, assumes csv file with timestamp in 1. column and data values in columns 2 to n.  
 `fxto(...` same as above with time optimized access  
 `cts(tstamp flg)` convert timestamp to German locale format back and forth flg=0 to webformat, 1 to German format  
